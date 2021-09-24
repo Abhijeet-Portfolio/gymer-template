@@ -176,6 +176,30 @@ header h2 {
   text-transform: capitalize;
 }
 
+.show {
+  width: 100%;
+  padding-bottom: 50px;
+  position: fixed;
+  left: 0;
+  background-color: #000000e7;
+  text-align: center;
+  flex-direction: column;
+}
+
+.show nav { margin: 20px auto;}
+.show ul { flex-direction: column;}
+.show ul li { margin: 10px auto;}
+.show .contact { position: static;}
+
+.show > li:last-child span::before {
+  content: '\f00d';
+  font-family: 'fontAwesome';
+  position: absolute;
+  top: 16px;
+  right: 7%;
+  color: #ffffff;
+  z-index: 10;
+}
 
 /*=================================
   Header styling ends here
@@ -261,7 +285,11 @@ header h2 {
 .step-up img { box-shadow: 4px 6px #48d494;}
 
 .classes .wrapper { width: 100%;}
-.classes { margin: 111px 0 101px;}
+
+.classes { 
+  margin: 111px 0 101px;
+  overflow: hidden;
+}
 
 .classes h2 { margin-left: 20.5%;}
 
@@ -273,12 +301,14 @@ header h2 {
   line-height: 1.5;
 }
 
-.classes .slider { display: flex;}
+.classes .slider { 
+  display: flex;
+  transition: 0.4s ease;
+}
 
-.classes .slider li:nth-child(5),
-.classes .slider li:nth-child(6),
-.classes .slider li:nth-child(7),
-.classes .slider li:nth-child(8) { display: none;}
+.left { transform: translateX(0%);}
+.right { transform: translateX(-100%);}
+.classes .slider li { min-width: 25%;}
 
 .classes .slider-control {
   margin: 10px 0;
@@ -297,6 +327,7 @@ header h2 {
   font-family: 'fontAwesome';
   font-size: 8px;
   text-indent: 0;
+  cursor: pointer;
 }
 
 .classes .active { color: #48d494;}
@@ -415,6 +446,7 @@ header h2 {
   line-height: 1.6;
 }
 
+.services .wrapper { overflow: hidden;}
 .services h2 { width: 40%;}
 
 .services .wrapper > p {
@@ -432,11 +464,15 @@ header h2 {
 
 .services .slider > li { 
   box-sizing: border-box;
-  width: 31%;
+  min-width: 31%;
   padding: 48px 5.5% 52px;
+  margin-right: 3%;
   display: block;
   background-color: #48d494;
 }
+
+.services .slider > li:nth-child(3),
+.services .slider > li:nth-child(6) { margin-right: 0;}
 
 .services .s-list li:nth-child(2) {
   margin: 22px 0 19px;
@@ -768,7 +804,11 @@ footer p a {
 
   .head > li:nth-child(2),
   .head > li:nth-child(3) { display: none;}
+
   .head > li:last-child { display: block;}
+
+  .show > li:nth-child(2),
+  .show > li:nth-child(3) { display: block;}
 
 }
 
