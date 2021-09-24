@@ -71,6 +71,7 @@ function rightSide() {
 }
 setInterval(rightSide,4000);
 setInterval(leftSide,8000);
+
 //days 
 
 var days = document.querySelectorAll('.days li');
@@ -114,3 +115,27 @@ function schedule(getDay, table) {
 
 }
 
+var serviceSlider = document.querySelector('.services .slider');
+var sliderleft = document.querySelector('.services .slider-control li:first-child');
+sliderleft.addEventListener('click', sliderFirst);
+
+function sliderFirst() {
+    if (sliderleft.className != 'active') {
+        document.querySelector('.services .slider-control .active').classList.remove('active');
+        sliderleft.classList.add('active');
+        serviceSlider.classList.replace('right', 'left');
+    }
+}
+
+var sliderright = document.querySelector('.services .slider-control li:last-child');
+sliderright.addEventListener('click', sliderSecond);
+
+function sliderSecond() {
+    if (sliderright.className != 'active') {
+        document.querySelector('.services .slider-control .active').classList.remove('active');
+        sliderright.classList.add('active');
+        serviceSlider.classList.replace('left', 'right');
+    }
+}
+setInterval(sliderSecond,4000);
+setInterval(sliderFirst,8000);

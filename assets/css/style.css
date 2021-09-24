@@ -460,19 +460,19 @@ header h2 {
 .services .slider {
   display: flex;
   justify-content: space-between;
+  transition: 0.4s;
 }
 
 .services .slider > li { 
   box-sizing: border-box;
   min-width: 31%;
   padding: 48px 5.5% 52px;
-  margin-right: 3%;
   display: block;
   background-color: #48d494;
 }
 
-.services .slider > li:nth-child(3),
-.services .slider > li:nth-child(6) { margin-right: 0;}
+.services .slider > li:nth-child(2),
+.services .slider > li:nth-child(5) { margin: 0 3%;}
 
 .services .s-list li:nth-child(2) {
   margin: 22px 0 19px;
@@ -523,7 +523,10 @@ header h2 {
   line-height: 1.6;
 }
 
-.contact form .form-group { padding: 5px 0;}
+.contact form .form-group { 
+  padding: 5px 0;
+  position: relative;
+}
 
 .contact form input,
 .contact form textarea {
@@ -551,6 +554,17 @@ form .form-container .form-group { width: 47.5%;}
   font-size: 11px;
   text-align: center;
 }
+
+.sub-error,
+.email-error,
+.text-error {
+  width: 30%;
+  position: absolute;
+  top: 10px;
+  left: 100%;
+}
+
+.contact .show { display: block;}
 
 .contact form button {
   width: 45%;
